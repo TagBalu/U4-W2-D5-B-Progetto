@@ -20,13 +20,13 @@ public class Application {
 
 
         GiocoDaTavolo gt1=new GiocoDaTavolo("UNO",1971,9.73,10,30);
-        GiocoDaTavolo gt2=new GiocoDaTavolo("Monopoly",1936,29.90,10,80);
+        GiocoDaTavolo gt2=new GiocoDaTavolo("Monopoly",1936,29.90,2,80);
         collezione.aggiungiGioco(gt1);
         collezione.aggiungiGioco(gt2);
 
         collezione.mostraGiochi();
        //-----------------esercizio 2 ----------------------------//
-        System.out.println("Inserisci id del gioc da cercare: ");
+        System.out.println("Inserisci id del gioco da cercare: ");
         String idCercato=scanner.nextLine();
         try{
             Gioco gioco=collezione.cercaPerId(idCercato);
@@ -36,7 +36,7 @@ public class Application {
         }
 
         //-------------esercizio 3 ------------------//
-        System.out.println("Inserisci limite di prezzo: ");
+       /* System.out.println("Inserisci limite di prezzo: ");
         double limitePrezzo=scanner.nextDouble();
 
         List<Gioco> risultati=collezione.cercaPerPrezzo(limitePrezzo);
@@ -44,6 +44,13 @@ public class Application {
             System.out.println("Nessun gioco con prezzo inferiore a "+ limitePrezzo);
         } else {
             risultati.forEach(System.out::println);
-        }
+        }*/
+
+        System.out.println("Inserisci numero di giocatori (2-10): ");
+        int numGiocatori=scanner.nextInt();
+        scanner.nextLine();
+
+        String risultati=collezione.cercaPerNumeroGiocatori(numGiocatori);
+        System.out.println(risultati);
     }
 }

@@ -29,4 +29,11 @@ public class CollezioniGiochi {
     public List<Gioco>cercaPerPrezzo(double prezzo){
         return giochi.stream().filter(gioco -> gioco.getPrezzo()< prezzo).collect(Collectors.toList());
     }
+
+    public String cercaPerNumeroGiocatori(int numGiocatori){
+        List<Gioco> risultati=giochi.stream().filter(gioco -> gioco instanceof GiocoDaTavolo).map(gioco -> (GiocoDaTavolo)gioco).filter(giocoDaTavolo -> giocoDaTavolo.getNumgiocatori()==numGiocatori).collect(Collectors.toList());
+        if (risultati.isEmpty()){
+            return "Nessun gioco trovato con " + numGiocatori+ "giocatori.";
+        } return risultati.stream().map(Gioco::toString).collect(Collectors.joining(" , "));
+    }
 }

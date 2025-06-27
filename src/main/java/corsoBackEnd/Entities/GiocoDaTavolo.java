@@ -12,6 +12,10 @@ public class GiocoDaTavolo extends Gioco {
         this.durataMedia=durataMedia;
     }
 
+    public int getNumgiocatori(){
+        return numgiocatori;
+    }
+
     @Override
     public String toString() {
         return "GiocoDaTavolo{" +
