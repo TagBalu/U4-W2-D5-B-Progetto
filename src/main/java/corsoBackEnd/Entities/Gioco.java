@@ -19,6 +19,10 @@ import java.util.UUID;
         public String getId(){
             return id;
         }
+
+        public double getPrezzo(){
+            return prezzo;
+        }
         @Override
         public String toString() {
             return "Gioco{" +
@@ -37,4 +41,6 @@ import java.util.UUID;
 
 
     }
-}
+
+
+    }
